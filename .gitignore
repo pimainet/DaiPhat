@@ -3,3 +3,15 @@ node_modules/
 .github_repo
 .env
 .env.*
+
+.vercel/
+.grok/
+.node_modules.lock
+attachments/
+screenshots/
+
+.vercel/
+.grok/
+.node_modules.lock
+attachments/
+screenshots/

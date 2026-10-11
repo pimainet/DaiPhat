@@ -159,43 +159,21 @@ export function renderInstallPageHtml(template, { host, url } = {}) {
 
 export function renderWebManifest(hostHeader) {
   const name = appNameFromHost(hostHeader);
-  const site = readOgSite();
-  const description = String(site.description ?? "").trim() || name;
-  const rawColor = String(site.color ?? "").trim();
-  const theme = rawColor
-    ? rawColor.startsWith("#")
-      ? rawColor
-      : `#${rawColor}`
-    : "#1d4ed8";
   return JSON.stringify(
     {
       name,
       short_name: name,
-      description,
       id: "/",
       start_url: "/",
       scope: "/",
       display: "standalone",
-      background_color: "#e8f2fc",
-      theme_color: theme,
+      background_color: "#000000",
+      theme_color: "#000000",
       icons: [
         {
           src: "/__grok/icon-180.png",
           sizes: "180x180",
           type: "image/png",
-          purpose: "any",
-        },
-        {
-          src: "/icon-192.png",
-          sizes: "192x192",
-          type: "image/png",
-          purpose: "any",
-        },
-        {
-          src: "/icon-512.png",
-          sizes: "512x512",
-          type: "image/png",
-          purpose: "any",
         },
       ],
     },
