@@ -1,0 +1,3 @@
+ALTER TABLE "user" ADD COLUMN IF NOT EXISTS phone text;
+ALTER TABLE "user" ADD COLUMN IF NOT EXISTS department text;
+ALTER TABLE "user" ADD COLUMN IF NOT EXISTS position text;
