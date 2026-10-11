@@ -1,16 +1,12 @@
-import { createRouter as createTanStackRouter } from '@tanstack/react-router'
-import { routeTree } from './routeTree.gen'
+import { createRouter } from "@tanstack/react-router";
+import { AppErrorComponent } from "@/lib/error-component";
+import { previewPathRewrite } from "@/lib/preview-path-prefix";
+import { routeTree } from "./routeTree.gen";
 
-export function createRouter() {
-  const router = createTanStackRouter({
+export function getRouter() {
+  return createRouter({
     routeTree,
-    scrollRestoration: true,
-  })
-  return router
-}
-
-declare module '@tanstack/react-router' {
-  interface Register {
-    router: ReturnType<typeof createRouter>
-  }
+    rewrite: previewPathRewrite(),
+    defaultErrorComponent: AppErrorComponent,
+  });
 }
