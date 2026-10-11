@@ -1,0 +1,12 @@
+node_modules/
+.project_id
+.github_repo
+.vercel
+.DS_Store
+*.log
+.env
+.env.*
+!.env.example
+dist/
+build/
+.output/
